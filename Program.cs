@@ -10,6 +10,8 @@ namespace DiscordEconomy
 {
     class Program
     {
+        const string Token = "";
+
         static void Main(string[] args)
         {
             MainTask().GetAwaiter().GetResult();
@@ -23,7 +25,7 @@ namespace DiscordEconomy
             {
                 return Task.Run(() => Console.WriteLine(message.Exception?.Message ?? message.Message));
             };
-            await client.LoginAsync(TokenType.Bot, @"MzY1ODY0MzI4MjgyNTA1MjE2.DLkhSA.fE20OTrd8XumtAQPm4AvHNbrDuE");
+            await client.LoginAsync(TokenType.Bot, Token);
             await client.StartAsync();
 
             client.Ready += () =>
